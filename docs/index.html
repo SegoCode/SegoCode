@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8" />
+    <title>SegoCode</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!-- Bots HoneyPot -->
+    <input type="checkbox" name="contact_me_email" value="1" style="display:none" onchange='window.location.replace("https://github.com/SegoCode");'>
+    <a id="email" href="mailto:bot@detected.bot" style="display:none;">I'm robot</a>
+    <!-- -->
+
+    <div class="center">
+      <div class="centerText">
+        <p class="head">Contact <a class="effect-underline" href="https://github.com/SegoCode">SegoCode</a></p>
+        <p><a id="hiddenData"> &#60;Click to reveal email&#62; </a></p>
+        <p id="jsEnabled" class="alert">Javascript not enabled</p>
+      </div>
+    </div>
+    <p id="volume" class="volume"></p>
+    <!-- JS -->
+    <script src="./script.js"></script>
+    <script src="https://unpkg.com/baffle@0.3.6/dist/baffle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js" crossorigin="anonymous"></script>
+  </body>
+
+</html>
