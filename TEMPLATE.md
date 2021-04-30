@@ -1,4 +1,5 @@
 <img align="right" src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/media/debian.webp">
+
 Coding **{{ ACCOUNT_AGE }}** years for fun in github and web backend dev employed.<br/>
 Making tiny and simple things which have **{{ STARS }}** stars across **{{ REPOSITORIES }}** repositories.<br/>
 Also, highly obsession with privacy.<br/>
@@ -14,4 +15,3 @@ Also, highly obsession with privacy.<br/>
 {{ LANGUAGE_TEMPLATE_END }}
 
 <p align="right"><sub>Generated using <a href="https://github.com/marketplace/actions/profile-readme-stats">teoxoy/profile-readme-stats</a></sub></p>
-
