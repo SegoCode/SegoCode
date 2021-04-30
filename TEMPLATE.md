@@ -1,6 +1,6 @@
-Coding **{{ ACCOUNT_AGE }}** years for fun in github and web backend dev employed.<br/>
 <img align="right" src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/media/debian.webp">
-Making tiny and simple things which have **{{ STARS }}** stars across **{{ REPOSITORIES }}**.<br/>
+Coding **{{ ACCOUNT_AGE }}** years for fun in github and web backend dev employed.<br/>
+Making tiny and simple things which have **{{ STARS }}** stars across **{{ REPOSITORIES }}** repositories.<br/>
 Also, highly obsession with privacy.<br/>
 
 
