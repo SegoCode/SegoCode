@@ -1,4 +1,5 @@
 <img align="right" src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/media/debian.webp">
+
 Coding **3** years for fun in github and web backend dev employed.<br/>
 Making tiny and simple things which have **111** stars across **10** repositories.<br/>
 Also, highly obsession with privacy.<br/>
@@ -16,4 +17,3 @@ Also, highly obsession with privacy.<br/>
 ![AutoIt](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=555&labelColor=%231C3552&message=AutoIt%EF%B8%B110.5%25)
 
 <p align="right"><sub>Generated using <a href="https://github.com/marketplace/actions/profile-readme-stats">teoxoy/profile-readme-stats</a></sub></p>
-
