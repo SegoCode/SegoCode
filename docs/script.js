@@ -2,7 +2,7 @@ console.log("%cHi there 👋", "color: #36393e; font-size: 30px;");
 console.log("Do you want some music on? Type 'music()'");
 document.getElementById("jsEnabled").style.display = "none";
 
-var lainonRadio = new Audio('http://lainon.life:8000/cyberia.ogg');
+var lainonRadio = new Audio('https://lainon.life/radio/cyberia.ogg');
 var triggerCount = 0; //Key listener
 var dataShowed = false; //Prevent double animation
 
