@@ -19,7 +19,7 @@ document.getElementById("hiddenData").addEventListener("click", event => {
         speed: 30
       })
       .text(text => atob(protected('U2Vnb0NvZGVTZWNyZXRz')))
-      .reveal(1000, 1000);
+      .reveal(1000, 100);
   }
 });
 
