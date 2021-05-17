@@ -1,7 +1,7 @@
 <img align="right" src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/media/debian.webp">
 
 Coding **3** years for fun in github and web backend dev employed.<br/>
-Making tiny and simple things which have **119** stars across **11** repositories.<br/>
+Making tiny and simple things which have **122** stars across **11** repositories.<br/>
 Also, highly obsession with privacy.<br/>
 
 
