@@ -5,7 +5,7 @@ Making tiny and simple things which have **{{ STARS }}** stars across **{{ REPOS
 Also, highly obsession with privacy.<br/>
 
 
-- Website: [runtime error: invalid memory address or nil pointer dereference](https://github.com/SegoCode)
+- Website: [runtime error: invalid memory address](https://github.com/SegoCode)
 - Email: [powered by Tutanota](https://segocode.github.io/SegoCode/)
 
 ----
