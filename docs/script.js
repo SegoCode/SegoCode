@@ -2,7 +2,7 @@ console.log("%cHi there 👋", "color: #36393e; font-size: 30px;");
 console.log("Do you want some music on? Type 'music()'");
 document.getElementById("jsEnabled").style.display = "none";
 
-var lainonRadio = new Audio('https://lainon.life/radio/cyberia.ogg');
+var lainonRadio = document.getElementById("audio");
 var triggerCount = 0; //Key listener
 var dataShowed = false; //Prevent double animation
 
@@ -34,15 +34,21 @@ function protected(key) {
 
 function music() {
   lainonRadio.volume = 0.3;
-  
+
   var audioContext = new AudioContext();
   var source = audioContext.createMediaElementSource(lainonRadio);
   source.connect(audioContext.destination);
-  
-  lainonRadio.play();
-  document.getElementById('volume').className = 'volume active'
-  document.getElementById('volume').textContent = "Volume > " + lainonRadio.volume * 10 + " // scroll to change ";
-  console.log("Playing radio streaming from lainon.life, Buffering...");
+
+  var analyzer = Meyda.createMeydaAnalyzer({
+      "audioContext": audioContext,
+      "source": source,
+      "bufferSize": 512,
+      "featureExtractors": ["rms"],
+      "callback": features => {
+          //document.body.style.backgroundColor = "hsl(217, 6%, "+features.rms*100+"%)";
+      }
+  });
+  analyzer.start();
 }
 
 
