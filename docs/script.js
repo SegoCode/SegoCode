@@ -34,6 +34,11 @@ function protected(key) {
 
 function music() {
   lainonRadio.volume = 0.3;
+  
+  var audioContext = new AudioContext();
+  var source = audioContext.createMediaElementSource(lainonRadio);
+  source.connect(audioContext.destination);
+  
   lainonRadio.play();
   document.getElementById('volume').className = 'volume active'
   document.getElementById('volume').textContent = "Volume > " + lainonRadio.volume * 10 + " // scroll to change ";
