@@ -45,10 +45,16 @@ function music() {
       "bufferSize": 512,
       "featureExtractors": ["rms"],
       "callback": features => {
-          //document.body.style.backgroundColor = "hsl(217, 6%, "+features.rms*100+"%)";
+          document.body.style.backgroundColor = "hsl(217, 6%, "+features.rms*100+"%)";
       }
   });
   analyzer.start();
+  
+  lainonRadio.play();
+  document.getElementById('volume').className = 'volume active'
+  document.getElementById('volume').textContent = "Volume > " + lainonRadio.volume * 10 + " // scroll to change ";
+  console.log("Playing radio streaming from lainon.life, Buffering...");
+  
 }
 
 
