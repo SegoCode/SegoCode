@@ -35,26 +35,33 @@ function protected(key) {
 function music() {
   lainonRadio.volume = 0.3;
 
+// meyda.min.js //
   var audioContext = new AudioContext();
   var source = audioContext.createMediaElementSource(lainonRadio);
   source.connect(audioContext.destination);
-
+  
   var analyzer = Meyda.createMeydaAnalyzer({
-      "audioContext": audioContext,
-      "source": source,
-      "bufferSize": 512,
-      "featureExtractors": ["rms"],
-      "callback": features => {
-          document.body.style.backgroundColor = "hsl(217, 6%, "+features.rms*100+"%)";
-      }
+    "audioContext": audioContext,
+    "source": source,
+    "bufferSize": 512,
+    "featureExtractors": ["rms"],
+    "callback": features => {
+	  //background effect
+      document.body.style.backgroundColor = "hsl(217, 6%, " + 1 + features.rms * 100 + "%)";
+	 
+	  //Cool crazy fonts
+	  //document.getElementById('gitname').style.fontSize = 21+features.rms * 100+"px";
+
+    }
   });
   analyzer.start();
-  
+// End meyda.min.js //
+
   lainonRadio.play();
   document.getElementById('volume').className = 'volume active'
   document.getElementById('volume').textContent = "Volume > " + lainonRadio.volume * 10 + " // scroll to change ";
   console.log("Playing radio streaming from lainon.life, Buffering...");
-  
+
 }
 
 
