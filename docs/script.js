@@ -47,11 +47,12 @@ function music() {
     "featureExtractors": ["rms"],
     "callback": features => {
 	  //background effect
-      document.body.style.backgroundColor = "hsl(217, 6%, " + 1 + features.rms * 100 + "%)";
+      //document.body.style.backgroundColor = "hsl(217, 6%, " + 1 + features.rms * 100 + "%)";
 	 
 	  //Cool crazy fonts
 	  //document.getElementById('gitname').style.fontSize = 21+features.rms * 100+"px";
-
+	  //document.getElementById('gitname').style.color = "hsl(0, 0%, "+ 1+features.rms * 100 + "%)";
+	  document.getElementById('gitname').style.textShadow  = "0 0 "+ 3+ features.rms * 100 + "px #c3c3c3"
     }
   });
   analyzer.start();
