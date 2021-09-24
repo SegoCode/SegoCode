@@ -6,7 +6,7 @@ Also, highly obsession with privacy.<br/>
 
 
 - Website: [runtime error: invalid memory address](https://github.com/SegoCode)
-- Email: [powered by Tutanota](https://segocode.github.io/SegoCode/)
+- Email: [secure and encrypted powered by Tutanota](https://segocode.github.io/SegoCode/)
 
 ----
 
