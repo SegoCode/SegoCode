@@ -35,28 +35,28 @@ function protected(key) {
 function music() {
   lainonRadio.volume = 0.3;
 
-// meyda.min.js //
+  // meyda.min.js //
   var audioContext = new AudioContext();
   var source = audioContext.createMediaElementSource(lainonRadio);
   source.connect(audioContext.destination);
-  
+
   var analyzer = Meyda.createMeydaAnalyzer({
     "audioContext": audioContext,
     "source": source,
     "bufferSize": 512,
     "featureExtractors": ["rms"],
     "callback": features => {
-	  //background effect
+      //background effect
       //document.body.style.backgroundColor = "hsl(217, 6%, " + 1 + features.rms * 100 + "%)";
-	 
-	  //Cool crazy fonts
-	  //document.getElementById('gitname').style.fontSize = 21+features.rms * 100+"px";
-	  //document.getElementById('gitname').style.color = "hsl(0, 0%, "+ 1+features.rms * 100 + "%)";
-	  document.getElementById('gitname').style.textShadow  = "0 0 "+ 3+ features.rms * 100 + "px #c3c3c3"
+
+      //Cool crazy fonts
+      //document.getElementById('gitname').style.fontSize = 21+features.rms * 100+"px";
+      //document.getElementById('gitname').style.color = "hsl(0, 0%, "+ 1+features.rms * 100 + "%)";
+      document.getElementById('gitname').style.textShadow = "0 0 " + 3 + features.rms * 100 + "px #c3c3c3"
     }
   });
   analyzer.start();
-// End meyda.min.js //
+  // End meyda.min.js //
 
   lainonRadio.play();
   document.getElementById('volume').className = 'volume active'
