@@ -1,4 +1,12 @@
-@import url('https://fonts.cdnfonts.com/css/vcr-eas');
+
+@font-face {
+  font-family: 'VCR EAS';
+  font-style: normal;
+  font-weight: 400;
+  src: local('VCR EAS'), url('https://fonts.cdnfonts.com/s/40025/VcrEas-rX3K.woff') format('woff');
+  font-display: swap;
+}
+
 
 * {
   font-family: 'VCR EAS', sans-serif;
