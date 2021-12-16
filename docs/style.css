@@ -1,96 +1,103 @@
-
 @font-face {
-  font-family: 'VCR EAS';
-  font-style: normal;
-  font-weight: 400;
-  src: local('VCR EAS'), url('https://fonts.cdnfonts.com/s/40025/VcrEas-rX3K.woff') format('woff');
-  font-display: swap;
+	font-family: 'VCR EAS';
+	font-style: normal;
+	font-weight: 400;
+	src: local('VCR EAS'), url('https://fonts.cdnfonts.com/s/40025/VcrEas-rX3K.woff') format('woff');
+	font-display: swap;
 }
 
-
 * {
-  font-family: 'VCR EAS', sans-serif;
+	font-family: 'VCR EAS', sans-serif;
 }
 
 body {
-  background-color: #36393e;
-  font-size: 1.3rem;
+	background-color: #36393e;
+	font-size: 1.3rem;
 }
 
 a {
-  text-decoration: none;
-  color: #c3c3c3;
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
+	text-decoration: none;
+	color: #c3c3c3;
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
 }
 
 .head {
-  font-size: 50px;
+	font-size: 50px;
 }
 
 .center {
-  width: 100%;
-  padding: 10px;
-  position: fixed;
-  top: 45%;
-  /* Looks better */
-  left: 50%;
-  transform: translate(-50%, -50%);
-
+	width: 100%;
+	padding: 10px;
+	position: fixed;
+	top: 45%;
+	/* Looks better */
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .centerText {
-  color: #c3c3c3;
-  text-align: center;
+	color: #c3c3c3;
+	text-align: center;
 }
 
-
 .effect-underline::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background: #c3c3c3;
-  bottom: -5px;
-  transform-origin: 100% 0;
-  transform: scaleX(0);
-  transition: transform 0.2s;
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background: #c3c3c3;
+	bottom: -5px;
+	transform-origin: 100% 0;
+	transform: scaleX(0);
+	transition: transform 0.2s;
 }
 
 .effect-underline:hover::before {
-  transform-origin: 0 0;
-  transform: scaleX(1);
+	transform-origin: 0 0;
+	transform: scaleX(1);
 }
 
 .volume {
-  opacity: 0;
+	opacity: 0;
 }
 
 .volume.active {
-  transition: opacity 2s ease-in-out;
-  opacity: 1;
-  color: #c3c3c3;
-  position: fixed;
-  right: 10px;
-  bottom: -5px;
-  z-index: -1;
+	transition: opacity 2s ease-in-out;
+	opacity: 1;
+	color: #c3c3c3;
+	position: fixed;
+	right: 10px;
+	bottom: -5px;
+}
+
+.buffering {
+	position: fixed;
+	right: 10px;
+	bottom: 40px;
+	animation-duration: 0.5s;
+	animation-name: changeOpacity;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	color: rgb(255, 60, 60);
+	display: none;
 }
 
 .alert {
-  animation-duration: 0.5s;
-  animation-name: changeOpacity;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  color: red;
+	animation-duration: 0.5s;
+	animation-name: changeOpacity;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	color: rgb(255, 60, 60);
 }
 
 @keyframes changeOpacity {
-  from {
-    opacity: 0;
-  }
+	from {
+		opacity: 0;
+	}
 
-  to {
-    opacity: 1;
-  }
+	to {
+		opacity: 1;
+	}
 }
