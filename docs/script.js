@@ -8,7 +8,6 @@ var dataShowed = false; //Prevent double animation
 
 document.getElementById('hiddenData').addEventListener('click', (event) => {
 	var baffle = window.baffle;
-	var CryptoJS = window.CryptoJS;
 	if (!dataShowed) {
 		dataShowed = true;
 		var baffleElement = baffle(document.querySelectorAll('#hiddenData'));
@@ -25,6 +24,7 @@ document.getElementById('hiddenData').addEventListener('click', (event) => {
 
 function protected(key) {
 	// Scraping protection
+	var CryptoJS = window.CryptoJS;
 	var bytes = CryptoJS.AES.decrypt('U2FsdGVkX18TpCCHkp0puKKrUoTs+HFOeaze9mRenZ5r/JMtzYPoI7XGxdPH+DQc', atob(key));
 	return bytes.toString(CryptoJS.enc.Utf8);
 }
