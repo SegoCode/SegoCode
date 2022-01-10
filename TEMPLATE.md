@@ -1,4 +1,4 @@
-<img align="right" src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/media/debian.webp">
+<img align="right" width="140" height="123" src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/media/mona-loading-default.gif">
 
 Coding **{{ ACCOUNT_AGE }}** years for fun in github and web backend dev employed.<br/>
 Making tiny and simple things which have **{{ STARS }}** stars across **{{ REPOSITORIES }}** repositories.<br/>
