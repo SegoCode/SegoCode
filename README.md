@@ -1,4 +1,4 @@
-<img align="right" width="140" height="123" src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/media/mona-loading-default.gif">
+<img align="right" width="140" height="123" src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/media/mona-loading-edited.gif">
 
 Coding **3** years for fun in github and web backend dev employed.<br/>
 Making tiny and simple things which have **275** stars across **12** repositories.<br/>
