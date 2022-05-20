@@ -18,5 +18,3 @@ Also, highly obsession with privacy.<br/>
 ![PowerShell](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23012456&message=PowerShell%EF%B8%B14%25)
 ![HTML](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23e34c26&message=HTML%EF%B8%B12.3%25)
 ![CSS](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23563d7c&message=CSS%EF%B8%B11.9%25)
-
-<p align="right"><sub>Generated using <a href="https://github.com/marketplace/actions/profile-readme-stats">teoxoy/profile-readme-stats</a></sub></p>
