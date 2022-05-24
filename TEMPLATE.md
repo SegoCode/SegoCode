@@ -7,6 +7,7 @@ Also, highly obsession with privacy.<br/>
 
 - Website: [runtime error: invalid memory address](https://github.com/SegoCode)
 - Email: [secure and encrypted powered by Tutanota](https://segocode.github.io/SegoCode/)
+- GPG key: [`179A0H3F98514DE4`](https://segocode.github.io/SegoCode/)
 
 ----
 
