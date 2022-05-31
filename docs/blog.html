@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HTML 5 Boilerplate</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-      it works!
-	<script src="index.js"></script>
-  </body>
+    <head>
+        <title>SegoCode</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <header>
+            <div>
+                <a href="https://github.com/SegoCode">SegoCode</a>
+            </div>
+            <input type="checkbox" id="nav-check" />
+            <label for="nav-check" class="nav-toggler">
+                <span></span>
+            </label>
+            <nav>
+                <ul>
+                    <li><a href="">Indice</a></li>
+                    <li><a href="https://github.com/SegoCode">Github</a></li>
+                    <li><a href="/SegoCode">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <p>
+            Últimos posts
+        </p>
+
+        <ul>
+            <li>
+                <a href="">Creado un blog sin servicios de terceros</a>
+            </li>
+        </ul>
+
+        <zero-md src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/README.md">
+            <template>
+                <link rel="stylesheet" href="styles.css" />
+            </template>
+        </zero-md>
+        <footer>💕</footer>
+        <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+    </body>
 </html>
