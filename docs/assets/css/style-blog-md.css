@@ -1,0 +1,28 @@
+:host{
+	display: block;
+	position: relative;
+	contain: content;
+	background-color: #505358 !important;
+	border-radius: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    
+}
+a {
+	font-family: "JetBrains Mono";
+	color: #36393e;
+	text-decoration: none; /* no underline */
+}
+
+pre {
+	font-family: "Roboto", sans-serif;
+	font-size: .85rem  ;
+	display: block;
+	padding: 1rem;
+	line-height: 1.4;
+	font-weight: 300;
+	margin-bottom: 2rem;
+	white-space: pre-wrap;
+	border: 3px solid #36393e;
+}
