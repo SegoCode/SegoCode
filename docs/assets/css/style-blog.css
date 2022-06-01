@@ -30,6 +30,25 @@ a {
 	text-decoration: none;
 }
 
+.alert {
+	animation-duration: 0.5s;
+	animation-name: changeOpacity;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	color: rgb(255, 60, 60);
+}
+
+@keyframes changeOpacity {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+
 
 /* Responsive section */
 

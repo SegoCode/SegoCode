@@ -1,43 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>SegoCode</title>
-        <link rel="stylesheet" href="./assets/css/style-blog.css" />
-    </head>
-    <body>
-        <header>
-            <div>
-                <a href="https://github.com/SegoCode">SegoCode</a>
-            </div>
-            <input type="checkbox" id="nav-check" />
-            <label for="nav-check" class="nav-toggler">
-                <span></span>
-            </label>
-            <nav>
-                <ul>
-                    <li><a href="">Indice</a></li>
-                    <li><a href="https://github.com/SegoCode">Github</a></li>
-                    <li><a href="/SegoCode">Contacto</a></li>
-                </ul>
-            </nav>
-        </header>
+<html lang="es">
+	<head>
+		<meta name="robots" content="noindex" />
+		<meta name="googlebot" content="noindex" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <p>
-            Últimos posts
-        </p>
+		<title>SegoCode</title>
 
-        <ul>
-            <li>
-                <a href="">Creado un blog sin servicios de terceros</a>
-            </li>
-        </ul>
+		<link rel="icon" type="image/png" href="https://github.githubassets.com/favicons/favicon.png" />
+		<link rel="stylesheet" href="./assets/css/style-blog.css" />
+	</head>
+	<body>
+		<header>
+			<div>
+				<a href="https://github.com/SegoCode">SegoCode</a>
+                <!-- Better than <noscript> -->
+				<a id="jsEnabled" class="alert">ERROR: Javascript not enabled</a>
+			</div>
+			<input type="checkbox" id="nav-check" />
+			<label for="nav-check" class="nav-toggler">
+				<span></span>
+			</label>
+			<nav>
+				<ul>
+					<li><a href="">Indice</a></li>
+					<li><a href="https://github.com/SegoCode">Github</a></li>
+					<li><a href="/SegoCode">Contacto</a></li>
+				</ul>
+			</nav>
+		</header>
 
-        <zero-md src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/README.md">
-            <template>
-                <link rel="stylesheet" href="./assets/css/style-blog-md.css" />
-            </template>
-        </zero-md>
-        <footer>💕</footer>
-        <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
-    </body>
+		<div id="lastPost">
+			<p>Últimos posts</p>
+
+			<ul>
+				<li>
+					<a href="">Creado un blog sin servicios de terceros</a>
+				</li>
+			</ul>
+		</div>
+
+		<zero-md id="post" style="display: none;" src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/README.md">
+			<template>
+				<link rel="stylesheet" href="./assets/css/style-blog-md.css" />
+			</template>
+		</zero-md>
+
+		<footer>💕</footer>
+		<!-- JS -->
+		<script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+		<script src="./assets/js/script-blog.js"></script>
+	</body>
 </html>
