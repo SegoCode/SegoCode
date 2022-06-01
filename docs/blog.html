@@ -14,8 +14,8 @@
 	<body>
 		<header>
 			<div>
-				<a href="https://github.com/SegoCode">SegoCode</a>
-                <!-- Better than <noscript> -->
+				<a>SegoCode</a>
+				<!-- Better than <noscript> -->
 				<a id="jsEnabled" class="alert">ERROR: Javascript not enabled</a>
 			</div>
 			<input type="checkbox" id="nav-check" />
@@ -31,17 +31,12 @@
 			</nav>
 		</header>
 
-		<div id="post">
+		<div id="postsBlock">
 			<p>Últimos posts</p>
-
-			<ul id="postList">
-				<li>
-					<a href="">Creado un blog sin servicios de terceros</a>
-				</li>
-			</ul>
+			<ul id="postList"></ul>
 		</div>
 
-		<zero-md id="post" style="display: none;" src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/README.md">
+		<zero-md id="postMd" style="display: none" src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/README.md">
 			<template>
 				<link rel="stylesheet" href="./assets/css/style-blog-md.css" />
 			</template>

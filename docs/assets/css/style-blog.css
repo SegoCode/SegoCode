@@ -6,7 +6,6 @@
 }
 
 
-
 * {
 	font-family: 'modeSeven', sans-serif;
 }
@@ -27,8 +26,13 @@ body {
 
 a {
 	color: #c3c3c3;
+	cursor: pointer;
 	text-decoration: none;
 }
+
+a:hover {
+	color: white;
+  }
 
 .alert {
 	animation-duration: 0.5s;
@@ -47,7 +51,6 @@ a {
 		opacity: 1;
 	}
 }
-
 
 
 /* Responsive section */

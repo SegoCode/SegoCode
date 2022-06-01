@@ -1,19 +1,46 @@
 document.getElementById('jsEnabled').style.display = 'none';
 
-const userAction = async () => {
-	for (let i = 0; i < 10; i++) {
-		const response = await fetch('https://raw.githubusercontent.com/SegoCode/SegoCode/main/docs/blogContent/entryblog-'+i+'.md');
+const urlBlog = 'https://raw.githubusercontent.com/SegoCode/SegoCode/main/docs/blogContent/';
+const app = document.querySelector('zero-md');
+
+const loadListPost = async () => {
+	for (let i = 1; true; i++) {
+		const response = await fetch(urlBlog + 'entryblog-' + i + '.md');
 		response.text().then(function (text) {
-			//read first line of text deleting the first character
-            const firstLine = text.split('\n')[0].substring(1);
-            //add firsLine to a tag inside li element
-            
-            const li = document.createElement('li').innerHTML = '<a>'+firstLine+'</a>'; ;
-            document.getElementById('postList').appendChild(li);
-            
-            
+			if (response.status === 200) {
+				//read first line of text and deleting the first character
+				let firstLine = text.split('\n')[0].substring(1);
+				let li = document.createElement('li');
+				li.innerHTML = "<a onclick='loadEntryBlog(" + i + ")'>" + firstLine + '</a>';
+				document.getElementById('postList').appendChild(li);
+			}
 		});
+
+		if (response.status !== 200) {
+			break;
+		}
 	}
 };
 
-userAction();
+function loadEntryBlog(entry) {
+	document.getElementById('postsBlock').style.display = 'none';
+	document.getElementById('postMd').style.display = 'block';
+
+	const run = async () => {
+		console.log('Render: ' + urlBlog + 'entryblog-' + entry + '.md');
+		app.src = urlBlog + 'entryblog-' + entry + '.md';
+		await app.render();
+	};
+	run();
+}
+
+function goHome() {
+	if (document.getElementById('postsBlock').style.display === 'block') {
+		window.location.href = 'https://github.com/SegoCode';
+	}
+
+	document.getElementById('postsBlock').style.display = 'block';
+	document.getElementById('postMd').style.display = 'none';
+}
+
+loadListPost();
