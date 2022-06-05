@@ -1,13 +1,14 @@
 @font-face {
-    font-family: 'SchilderGrotesk';
-    font-style: normal;
-    font-weight: 500;
-    src: local('SchilderGrotesk'), url('https://fonts.cdnfonts.com/s/20513/schilder.woff') format('woff');
-}
-
+	font-family: 'JetBrains Mono';
+	src: url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Regular.woff2') format('woff2'),
+	  url('https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+  }
 
 * {
-	font-family: 'modeSeven', sans-serif;
+	font-family: 'JetBrains Mono', sans-serif;
 }
 
 html {
