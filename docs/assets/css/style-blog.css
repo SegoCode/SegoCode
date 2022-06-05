@@ -17,7 +17,7 @@ html {
 }
 
 body {
-	color: #c3c3c3;
+	color: #9C9FA4;
 	margin-top: 2%;
 	margin-left: auto;
 	margin-right: auto;
@@ -25,13 +25,13 @@ body {
 }
 
 a {
-	color: #c3c3c3;
+	color: #9C9FA4;
 	cursor: pointer;
 	text-decoration: none;
 }
 
 a:hover {
-	color: white;
+	color: #CFD2D7;
   }
 
 .alert {

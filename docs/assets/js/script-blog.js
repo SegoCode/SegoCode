@@ -34,13 +34,4 @@ function loadEntryBlog(entry) {
 	run();
 }
 
-function goHome() {
-	if (document.getElementById('postsBlock').style.display === 'block') {
-		window.location.href = 'https://github.com/SegoCode';
-	}
-
-	document.getElementById('postsBlock').style.display = 'block';
-	document.getElementById('postMd').style.display = 'none';
-}
-
 loadListPost();
