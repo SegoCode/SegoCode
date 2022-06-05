@@ -1,14 +1,10 @@
-@font-face {
-	font-family: 'VCR EAS';
-	font-style: normal;
-	font-weight: 400;
-	src: local('VCR EAS'), url('https://fonts.cdnfonts.com/s/40025/VcrEas-rX3K.woff') format('woff');
-	font-display: swap;
-}
+
+@import url('http://fonts.cdnfonts.com/css/retron2000');
 
 * {
-	font-family: 'VCR EAS', sans-serif;
+	font-family: 'Retron2000', sans-serif;
 }
+
 
 body {
 	background-color: #36393e;
@@ -17,7 +13,7 @@ body {
 
 a {
 	text-decoration: none;
-	color: #c3c3c3;
+	color: #9C9FA4;
 	cursor: pointer;
 	display: inline-block;
 	position: relative;
@@ -38,7 +34,7 @@ a {
 }
 
 .centerText {
-	color: #c3c3c3;
+	color: #9C9FA4;
 	text-align: center;
 }
 
@@ -47,7 +43,7 @@ a {
 	position: absolute;
 	width: 100%;
 	height: 2px;
-	background: #c3c3c3;
+	background: #9C9FA4;
 	bottom: -5px;
 	transform-origin: 100% 0;
 	transform: scaleX(0);
@@ -66,7 +62,7 @@ a {
 .volume.active {
 	transition: opacity 2s ease-in-out;
 	opacity: 1;
-	color: #c3c3c3;
+	color: #9C9FA4;
 	position: fixed;
 	right: 10px;
 	bottom: -5px;
