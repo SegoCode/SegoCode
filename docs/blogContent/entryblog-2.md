@@ -3,7 +3,7 @@
 Los servicios como google fotos, iCloud, drive... cuando manejamos un volumen de datos grande sobrepasaremos el umbral gratuito, estos servicios a la larga son caros y probablemente tengan dudosas políticas de privacidad. Por ello hoy veremos como hacer un pequeño sistema de backup sin complejas configuraciones en la red, sin necesidad de apertura de puertos o ip estáticas
 
 Usaremos lo siguiente
-   - Un servidor con linux (En mi caso una raspberryPI)
+   - Un servidor con linux (En mi caso una raspberryPi)
    - Un almacenamiento para los datos
    - Docker 
    - La app Syncthing
@@ -14,21 +14,18 @@ Con el linux instalado en nuestro servidor, ejecutaremos estos comandos para act
 
 ```
 sudo apg-get update && sudo apt-get full-upgrade
-
 ```
 
 Ahora instalaremos docker 
 
 ```
 sudo curl -sSL https://get.docker.com | sh
-
 ```
 
 Añadiremos el usuario de docker a los permisos del usuario actual
 
 ```
 sudo usermod -aG docker $USER
-
 ```
 
 En este punto tenemos una maquina linux limpia, actualizada y con docker instalado. Nuestro siguiente paso es conectar/configurar el almacenamiento externo para nuestro backup, ya sea un USB o un disco externo, tendremos que preparar la unidad para ser usada.
@@ -37,7 +34,6 @@ En mi caso es un disco externo por USB, primero tendremos que obtener el UUID de
 
 ```
 blkid -t TYPE=vfat -sUUID 
-
 ```
 
 `TYPE=vfat` corresponde al tipo de sistema de ficheros que usa tu almacenamiento, tendrás que adaptar el comando si no corresponde a FAT32 (Para particiones de FAT32 el tamaño máximo de archivo es 4GB)
@@ -46,7 +42,6 @@ En mi caso se muestra el siguiente output `/dev/sda1: UUID="A112-7J1C"` ubicado 
 
 ```
 mkdir /mnt/usb1
-
 ```
 _IMPORTANTE las particiones de vfat no corresponden al estándar UNIX, no se rigen por el sistema de permisos normales de linux_
 
@@ -54,7 +49,6 @@ Crearemos el montaje automático de la unidad en caso de reinicio del sistema, v
 
 ```
 UUID=A112-7J1C /mnt/usb1 vfat defaults,auto,users,rw,nofail,noatime,uid=1000,gid=1000 0 0
-
 ```
 _Tendrás que reemplazar el UUID por el de tu dispositivo_
 
@@ -65,7 +59,6 @@ Reiniciamos la maquina
 
 ```
 sudo reboot
-
 ```
 
 Tras el reinicio deberíamos tener la unidad montada y lista para ser usada pasamos a configurar la sincronización, desplegaremos esta imagen https://hub.docker.com/r/linuxserver/syncthing con el siguiente comando
@@ -85,7 +78,6 @@ docker run -d \
   -v /mnt/usb1:/data1 `#Aqui pondremos nuestro dispositivo externo` \
   --restart unless-stopped \
   lscr.io/linuxserver/syncthing:latest
-
 ```
 Aunque he puesto unos comentarios aclaratorios, si hemos seguido esta guía, no requiere ninguna modificación.
 
