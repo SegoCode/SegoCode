@@ -1,12 +1,13 @@
 <img align="right" width="140" height="123" alt="octocat" src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/media/mona-loading-edited-apng.png">
 
 Coding **4** years for fun in github and web backend dev employed.<br/>
-Making tiny and simple things which have **408** stars across **12** repositories.<br/>
+Making tiny and simple things which have **409** stars across **12** repositories.<br/>
 Also, highly obsession with privacy.<br/>
 
 
 - Website: [small writeups in Spanish](https://segocode.github.io/SegoCode/blog)
 - Email: [secure and encrypted powered by Tutanota](https://segocode.github.io/SegoCode/)
+- Discussions: [Another way to keep in touch with me](https://github.com/SegoCode/SegoCode/discussions/categories/keep-in-touch)
 - GPG key: [`179A0H3F98514DE4`](https://segocode.github.io/SegoCode/)
 
 ----
