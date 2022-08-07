@@ -1,4 +1,7 @@
 document.getElementById('jsEnabled').style.display = 'none';
+document.getElementById('titleName').style.display = 'block';
+
+
 
 const urlBlog = 'https://raw.githubusercontent.com/SegoCode/SegoCode/main/docs/blogContent/';
 const app = document.querySelector('zero-md');

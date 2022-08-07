@@ -24,6 +24,13 @@ a {
 	position: relative;
 }
 
+
+a:hover {
+	color: #CFD2D7;
+  }
+
+
+
 .head {
 	font-size: 50px;
 }

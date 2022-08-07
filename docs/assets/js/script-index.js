@@ -9,6 +9,7 @@ var dataShowed = false; //Prevent double animation
 document.getElementById('hiddenData').addEventListener('click', (event) => {
 	var baffle = window.baffle;
 	if (!dataShowed) {
+		document.getElementById("hiddenData").style.cursor = "text"; 
 		dataShowed = true;
 		var baffleElement = baffle(document.querySelectorAll('#hiddenData'));
 
