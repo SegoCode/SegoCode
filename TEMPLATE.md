@@ -5,9 +5,9 @@ Making tiny and simple things which have **{{ STARS }}** stars across **{{ REPOS
 Also, highly obsession with privacy.<br/>
 
 
-- Website: [small writeups in Spanish](https://segocode.github.io/SegoCode/blog)
 - Email: [secure and encrypted powered by Tutanota](https://segocode.github.io/SegoCode/)
-- Discussions: [Another way to keep in touch with me](https://github.com/SegoCode/SegoCode/discussions/categories/keep-in-touch)
+- Website: [small writeups in Spanish](https://segocode.github.io/SegoCode/blog)
+- Discussions: [another way to keep in touch with me](https://github.com/SegoCode/SegoCode/discussions/categories/keep-in-touch)
 - GPG key: [`179A0H3F98514DE4`](https://segocode.github.io/SegoCode/)
 
 ----
