@@ -5,7 +5,7 @@ Making tiny and simple things which have **408** stars across **12** repositorie
 Also, highly obsession with privacy.<br/>
 
 
-- Website: [runtime error: invalid memory address](https://github.com/SegoCode)
+- Website: [small writeups in Spanish](https://segocode.github.io/SegoCode/blog)
 - Email: [secure and encrypted powered by Tutanota](https://segocode.github.io/SegoCode/)
 - GPG key: [`179A0H3F98514DE4`](https://segocode.github.io/SegoCode/)
 
