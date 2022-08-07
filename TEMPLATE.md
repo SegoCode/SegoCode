@@ -7,6 +7,7 @@ Also, highly obsession with privacy.<br/>
 
 - Website: [small writeups in Spanish](https://segocode.github.io/SegoCode/blog)
 - Email: [secure and encrypted powered by Tutanota](https://segocode.github.io/SegoCode/)
+- Discussions: [Another way to keep in touch with me](https://github.com/SegoCode/SegoCode/discussions/categories/keep-in-touch)
 - GPG key: [`179A0H3F98514DE4`](https://segocode.github.io/SegoCode/)
 
 ----
