@@ -24,3 +24,12 @@ pre {
 	border: 3px solid #36393e;
 }
 
+a {
+	color: #9C9FA4;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #CFD2D7;
+}

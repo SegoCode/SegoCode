@@ -7,15 +7,14 @@ const urlBlog = 'https://raw.githubusercontent.com/SegoCode/SegoCode/main/docs/b
 const app = document.querySelector('zero-md');
 
 const loadListPost = async () => {
+	let post = new Array();
 	for (let i = 1; true; i++) {
 		const response = await fetch(urlBlog + 'entryblog-' + i + '.md');
 		response.text().then(function (text) {
 			if (response.status === 200) {
 				//read first line of text and deleting the first character
 				let firstLine = text.split('\n')[0].substring(1);
-				let li = document.createElement('li');
-				li.innerHTML = "<a onclick='loadEntryBlog(" + i + ")'>" + firstLine + '</a>';
-				document.getElementById('postList').appendChild(li);
+				post.unshift("<a onclick='loadEntryBlog(" + i + ")'>" + firstLine + '</a>');
 			}
 		});
 
@@ -23,6 +22,14 @@ const loadListPost = async () => {
 			break;
 		}
 	}
+
+
+	post.forEach( element => {
+		let li = document.createElement('li');
+		li.innerHTML = element;
+		document.getElementById('postList').appendChild(li);
+	});
+
 };
 
 function loadEntryBlog(entry) {
