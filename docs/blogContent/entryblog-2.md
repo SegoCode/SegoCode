@@ -36,9 +36,9 @@ En mi caso es un disco externo por USB, primero tendremos que obtener el UUID de
 blkid -t TYPE=vfat -sUUID 
 ```
 
-`TYPE=vfat` corresponde al tipo de sistema de ficheros que usa tu almacenamiento, tendrás que adaptar el comando si no corresponde a FAT32 (Para particiones de FAT32 el tamaño máximo de archivo es 4GB)
+" TYPE=vfat " corresponde al tipo de sistema de ficheros que usa tu almacenamiento, tendrás que adaptar el comando si no corresponde a FAT32 (Para particiones de FAT32 el tamaño máximo de archivo es 4GB)
 
-En mi caso se muestra el siguiente output `/dev/sda1: UUID="A112-7J1C"` ubicado nuestro almacenamiento externo crearemos una nueva carpeta para montar la unidad
+En mi caso se muestra el siguiente output " /dev/sda1: UUID="A112-7J1C" " ubicado nuestro almacenamiento externo crearemos una nueva carpeta para montar la unidad
 
 ```
 mkdir /mnt/usb1
