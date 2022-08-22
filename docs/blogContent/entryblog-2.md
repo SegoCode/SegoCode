@@ -81,4 +81,4 @@ docker run -d \
 ```
 Aunque he puesto unos comentarios aclaratorios, si hemos seguido esta guía, no requiere ninguna modificación.
 
-Felicidades tienes la aplicación syncthing en el puerto 8384 y todo configurado aprueba de cortes de energía y reinicios, esta no va a ser una guía de syncthing solo de los pasos previos, a partir de aquí usa la interfaz gráfica, descarga la app en el movil y sigue la documentación https://docs.syncthing.net/intro/index.html
+Felicidades tienes la aplicación syncthing en el puerto 8384 y todo configurado a prueba de cortes de energía y reinicios, esta no va a ser una guía de syncthing solo de los pasos previos, a partir de aquí usa la interfaz gráfica, descarga la app en el movil y sigue la documentación https://docs.syncthing.net/intro/index.html
