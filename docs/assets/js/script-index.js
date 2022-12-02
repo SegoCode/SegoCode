@@ -6,6 +6,10 @@ var lainonRadio = document.getElementById('audio');
 var triggerCount = 0; //Key listener
 var dataShowed = false; //Prevent double animation
 
+function showEmail() {
+	document.getElementById('hiddenData').style.display = 'block';
+}
+
 document.getElementById('hiddenData').addEventListener('click', (event) => {
 	var baffle = window.baffle;
 	if (!dataShowed) {
