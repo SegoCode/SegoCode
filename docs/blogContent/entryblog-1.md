@@ -1,6 +1,6 @@
 # Creado un blog sin servicios de terceros
 
-En algún lugar leí que todo programador necesitaba un sitio para sus writeups, en mi pequeño acercamiento al crear uno paso por CDNs, Github Pages y Jekyll. Yo no quería que la publicación de mi blog dependiera en servicios CI de terceros. Aquí nació la necesidad imperiosa, más halla de crear un blog... buscar alguna manera por la que todo dependiera de si mismo, en este caso Github. 
+En algún lugar leí que todo programador necesitaba un sitio para sus writeups, en mi pequeño acercamiento al crear uno paso por CDNs, Github Pages y Jekyll. Yo no quería que la publicación de mi blog dependiera en servicios CI de terceros y aquí nació la necesidad imperiosa, más halla de crear un blog... buscar alguna manera por la que todo dependiera de si mismo, en este caso Github. 
 
 El modelo a seguir inicial consiste en alojar los writeups como markdown dentro de Github, recuperarlos del repositorio y listarlos desde el lado del cliente, es sencillo, además github disponía de una api para ello, usando Axios.js no debería haber mayor problema
 
