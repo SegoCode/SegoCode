@@ -1,6 +1,10 @@
 document.getElementById('jsEnabled').style.display = 'none';
 document.getElementById('titleName').style.display = 'block';
 
+window.history.pushState(null, "", window.location.href);
+window.onpopstate = function () {
+    window.history.pushState(null, "", window.location.href);
+};
 
 
 const urlBlog = 'https://raw.githubusercontent.com/SegoCode/SegoCode/main/docs/blogContent/';
