@@ -1,6 +1,6 @@
 # Reglas YARA, una herramienta valiosa para filtrar subida de archivos en servidores 
 
-Estamos acostumbrados a comprobar la extension de un archivo cuando creamos una implementacion para subir archivos al servidor, pero esto no es suficiente,  si un servidor web está mal configurado, es posible que no esté verificando adecuadamente el tipo de archivo que se está subiendo, lo que significa que un archivo .php renombrado como .jpg podría ser interpretado como una imagen legítima. Esto podría permitir que el código malicioso contenido en el archivo .php se ejecute en el servidor, lo que podría resultar en una vulnerabilidad en la seguridad del sitio web.
+Estamos acostumbrados a comprobar la extension de un archivo cuando creamos una implementación para subir archivos al servidor, pero esto no es suficiente,  si un servidor web está mal configurado, es posible que un archivo .php renombrado como .jpg podría ser interpretado como una imagen legítima y esto podría permitir que el código malicioso contenido en el archivo .php se ejecute en el servidor, lo que podría resultar en una vulnerabilidad en la seguridad del sitio web. https://github.com/fakhrizulkifli/Defeating-PHP-GD-imagecreatefromjpeg
 
 Necesitamos adoptar las reglas YARA, estas reglas permiten una verificación más exhaustiva de los archivos en comparación con simplemente comprobar la extensión del archivo. 
 
@@ -18,15 +18,15 @@ rule JPG_header {
 }
 ```
 
-La regla busca la secuencia de bytes que forman la cabecera de un archivo JPG `FF D8 FF E0 00 10 4A 46 49 46 00 01` al inicio del archivo. Si se encuentra, se cumple la condición y se activa la regla.
+La regla busca la secuencia de bytes que forman la cabecera de un archivo JPG "FF D8 FF E0 00 10 4A 46 49 46 00 01" al inicio del archivo. Si se encuentra, se cumple la condición y se activa la regla.
 
-Para implementar una verificación de la regla YARA en nuestro backend JS, primero debemos instalar la biblioteca `yara.js` mediante el comando:
+Para implementar una verificación de la regla YARA en nuestro backend JS, primero debemos instalar la biblioteca "yara.js" mediante el comando:
 
 ```bash
 npm install yara.js
 ```
 
-Luego, podemos escribir un código como el siguiente:
+Luego, podemos escribir un código como el siguiente para probar nuestra regla YARA:
 
 ```javascript
 const fs = require('fs');
@@ -56,7 +56,7 @@ if (matches.length > 0) {
 }
 
 ```
-
+Lo ideal seria que esta regla YARA se aplicara al buffer de un archivo subido desde endpoint. 
 
 Cabe mencionar que esta regla es muy básica y podría no funcionar en todos los casos. Por ejemplo, no tiene en cuenta la posibilidad de que haya otras secciones de datos antes de la cabecera JPG, como secciones de comentarios o de encabezado EXIF. Para una implementación más completa y robusta, podría ser necesario agregar más código a la regla.
 
