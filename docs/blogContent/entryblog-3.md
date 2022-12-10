@@ -56,7 +56,7 @@ if (matches.length > 0) {
 }
 
 ```
-Lo ideal seria que esta regla YARA se aplicara al buffer de un archivo subido desde endpoint. 
+Lo ideal seria que esta regla YARA se aplicara al buffer de un archivo subido desde un endpoint. 
 
 Cabe mencionar que esta regla es muy básica y podría no funcionar en todos los casos. Por ejemplo, no tiene en cuenta la posibilidad de que haya otras secciones de datos antes de la cabecera JPG, como secciones de comentarios o de encabezado EXIF. Para una implementación más completa y robusta, podría ser necesario agregar más código a la regla.
 
