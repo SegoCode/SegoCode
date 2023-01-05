@@ -1,15 +1,13 @@
-
 @font-face {
-    font-family: 'Retron2000';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Retron2000'), url('https://fonts.cdnfonts.com/s/18145/Retron2000.woff') format('woff');
+	font-family: 'Retron2000';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Retron2000'), url('https://fonts.cdnfonts.com/s/18145/Retron2000.woff') format('woff');
 }
 
 * {
 	font-family: 'Retron2000', sans-serif;
 }
-
 
 body {
 	background-color: #36393e;
@@ -18,18 +16,15 @@ body {
 
 a {
 	text-decoration: none;
-	color: #9C9FA4;
+	color: #9c9fa4;
 	cursor: pointer;
 	display: inline-block;
 	position: relative;
 }
 
-
 a:hover {
-	color: #CFD2D7;
-  }
-
-
+	color: #cfd2d7;
+}
 
 .head {
 	font-size: 50px;
@@ -46,7 +41,7 @@ a:hover {
 }
 
 .centerText {
-	color: #9C9FA4;
+	color: #9c9fa4;
 	text-align: center;
 }
 
@@ -55,7 +50,7 @@ a:hover {
 	position: absolute;
 	width: 100%;
 	height: 2px;
-	background: #9C9FA4;
+	background: #9c9fa4;
 	bottom: -5px;
 	transform-origin: 100% 0;
 	transform: scaleX(0);
@@ -74,7 +69,7 @@ a:hover {
 .volume.active {
 	transition: opacity 2s ease-in-out;
 	opacity: 1;
-	color: #9C9FA4;
+	color: #9c9fa4;
 	position: fixed;
 	right: 10px;
 	bottom: -5px;

@@ -9,7 +9,7 @@ var dataShowed = false; //Prevent double animation
 document.getElementById('hiddenData').addEventListener('click', (event) => {
 	var baffle = window.baffle;
 	if (!dataShowed) {
-		document.getElementById("hiddenData").style.cursor = "text"; 
+		document.getElementById('hiddenData').style.cursor = 'text';
 		dataShowed = true;
 		var baffleElement = baffle(document.querySelectorAll('#hiddenData'));
 
@@ -49,7 +49,8 @@ function music() {
 			var musicLog = document.getElementById('musicLog');
 			document.getElementById('gitname').style.textShadow = '0 0 ' + 3 + features.rms * 100 + 'px #c3c3c3';
 
-			if (features.rms == 0) { //¿Silent?
+			if (features.rms == 0) {
+				//¿Silent?
 				musicLog.textContent = 'CONNECTION ERROR: Buffering...';
 				musicLog.style.display = 'block';
 			} else {

@@ -1,25 +1,31 @@
 document.getElementById('jsEnabled').style.display = 'none';
 document.getElementById('titleName').style.display = 'block';
 
+var itsOnPost = false;
+
 window.history.pushState(null, '', window.location.href);
 window.onpopstate = function () {
 	window.history.pushState(null, '', window.location.href);
 
-	// Get all of the <a> elements in the navigation menu
-	let links = document.querySelectorAll('nav a');
+	if (itsOnPost) {
+		location.reload();
+	} else {
+		// Get all of the <a> elements in the navigation menu
+		let links = document.querySelectorAll('nav a');
 
-	// Loop through the <a> elements and set their color to a light color
-	links.forEach(function (link) {
-		link.style.color = 'rgb(255, 60, 60)';
-	});
-
-	// Wait for half a second
-	setTimeout(function () {
+		// Loop through the <a> elements and set their color to a light color
 		links.forEach(function (link) {
-			// Loop through the <a> elements and set their color back to the original color
-			link.style.color = '#9C9FA4';
+			link.style.color = 'rgb(255, 60, 60)';
 		});
-	}, 500);
+
+		// Wait for half a second
+		setTimeout(function () {
+			links.forEach(function (link) {
+				// Loop through the <a> elements and set their color back to the original color
+				link.style.color = '#9C9FA4';
+			});
+		}, 500);
+	}
 };
 
 const urlBlog = 'https://raw.githubusercontent.com/SegoCode/SegoCode/main/docs/blogContent/';
@@ -50,6 +56,7 @@ const loadListPost = async () => {
 };
 
 function loadEntryBlog(entry) {
+	itsOnPost = true;
 	document.getElementById('postsBlock').style.display = 'none';
 	document.getElementById('postMd').style.display = 'block';
 

@@ -20,13 +20,7 @@ rule JPG_header {
 
 La regla busca la secuencia de bytes que forman la cabecera de un archivo JPG "FF D8 FF E0 00 10 4A 46 49 46 00 01" al inicio del archivo. Si se encuentra, se cumple la condición y se activa la regla.
 
-Para implementar una verificación de la regla YARA en nuestro backend JS, primero debemos instalar la biblioteca "yara.js" mediante el comando:
-
-```bash
-npm install yara.js
-```
-
-Luego, podemos escribir un código como el siguiente para probar nuestra regla YARA:
+Podemos escribir un código como el siguiente para probar nuestra regla YARA:
 
 ```javascript
 const fs = require('fs');

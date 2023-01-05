@@ -1,19 +1,16 @@
 @font-face {
-    font-family: 'Whois';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Whois'), url('https://fonts.cdnfonts.com/s/19875/whois-mono.woff') format('woff');
+	font-family: gt maru;
+	font-style: normal;
+	font-weight: 400;
+	src: local('GT Maru'), url(https://fonts.cdnfonts.com/s/88523/GTMaruRegular.woff) format('woff');
 }
-
 
 * {
-	font-family: 'Whois', sans-serif;
-
+	font-family: 'gt maru', sans-serif;
 }
 
-
 body {
-	color: #9C9FA4;
+	color: #9c9fa4;
 	margin-top: 2%;
 	margin-left: auto;
 	margin-right: auto;
@@ -21,15 +18,15 @@ body {
 }
 
 a {
-	color: #9C9FA4;
+	color: #9c9fa4;
 	cursor: pointer;
 	text-decoration: none;
-	transition: color 0.7s ease-in-out;
+	transition: color 0.2s ease-in-out;
 }
 
 a:hover {
-	color: #CFD2D7;
-  }
+	color: #cfd2d7;
+}
 
 .alert {
 	animation-duration: 0.5s;
@@ -37,6 +34,10 @@ a:hover {
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 	color: rgb(255, 60, 60);
+}
+
+#postList li {
+	margin-bottom: 10px;
 }
 
 @keyframes changeOpacity {
@@ -48,7 +49,6 @@ a:hover {
 		opacity: 1;
 	}
 }
-
 
 /* Responsive section */
 
@@ -96,12 +96,11 @@ a:hover {
 	}
 }
 
-
 /* Header section */
 
 header {
 	margin-bottom: 0.5rem;
-	padding-bottom: .5rem;
+	padding-bottom: 0.5rem;
 	border-bottom: 3px solid #c3c3c3;
 	display: flex;
 	flex-wrap: wrap;
@@ -162,7 +161,7 @@ nav ul li {
 	top: 7px;
 }
 
-@media(max-width: 990px) { 
+@media (max-width: 990px) {
 	.nav-toggler {
 		display: flex;
 	}
@@ -179,7 +178,7 @@ nav ul li {
 	}
 	header nav ul li {
 		display: block;
-		margin: .75rem 0 .75rem 1rem;
+		margin: 0.75rem 0 0.75rem 1rem;
 	}
 	header #nav-check:checked ~ nav {
 		opacity: 1;
@@ -190,21 +189,20 @@ nav ul li {
 		background-color: transparent;
 	}
 	header #nav-check:checked ~ .nav-toggler span::before {
-		top:0;
+		top: 0;
 		transform: rotate(45deg);
 	}
 	header #nav-check:checked ~ .nav-toggler span::after {
-		top:0;
+		top: 0;
 		transform: rotate(-45deg);
 	}
 }
-
 
 /* Footer section */
 
 footer {
 	text-align: right;
 	margin-top: 0.5rem;
-	padding-top: .5rem;
+	padding-top: 0.5rem;
 	border-top: 3px solid #c3c3c3;
 }
