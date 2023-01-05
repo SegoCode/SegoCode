@@ -1,12 +1,13 @@
 @font-face {
-    font-family: 'Retron2000';
+    font-family: 'Whois';
     font-style: normal;
     font-weight: 400;
-    src: local('Retron2000'), url('https://fonts.cdnfonts.com/s/18145/Retron2000.woff') format('woff');
+    src: local('Whois'), url('https://fonts.cdnfonts.com/s/19875/whois-mono.woff') format('woff');
 }
 
+
 * {
-	font-family: 'Retron2000', sans-serif;
+	font-family: 'Whois', sans-serif;
 
 }
 
