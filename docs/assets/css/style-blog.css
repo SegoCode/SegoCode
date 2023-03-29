@@ -1,12 +1,12 @@
 @font-face {
-	font-family: gt maru;
+	font-family: 'Retron2000';
 	font-style: normal;
 	font-weight: 400;
-	src: local('GT Maru'), url(https://fonts.cdnfonts.com/s/88523/GTMaruRegular.woff) format('woff');
+	src: local('Retron2000'), url('https://fonts.cdnfonts.com/s/18145/Retron2000.woff') format('woff');
 }
 
 * {
-	font-family: 'gt maru', sans-serif;
+	font-family: 'Retron2000', sans-serif;
 }
 
 body {
