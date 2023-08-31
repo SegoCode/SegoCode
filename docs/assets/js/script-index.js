@@ -18,12 +18,12 @@ document.getElementById('hiddenData').addEventListener('click', (event) => {
 			.set({
 				speed: 30,
 			})
-			.text((text) => atob(protected('U2Vnb0NvZGVTZWNyZXRz')))
+			.text((text) => atob(protectedFunc('U2Vnb0NvZGVTZWNyZXRz')))
 			.reveal(1000, 100);
 	}
 });
 
-function protected(key) {
+function protectedFunc(key) {
 	// Scraping protection
 	var CryptoJS = window.CryptoJS;
 	var bytes = CryptoJS.AES.decrypt('U2FsdGVkX18TpCCHkp0puKKrUoTs+HFOeaze9mRenZ5r/JMtzYPoI7XGxdPH+DQc', atob(key));
@@ -31,40 +31,42 @@ function protected(key) {
 }
 
 // Radio code section //
-
-function music() {
-	lainonRadio.volume = 0.3;
-
-	// meyda.min.js //
-	var audioContext = new AudioContext();
-	var source = audioContext.createMediaElementSource(lainonRadio);
+async function music() {
+	const audioContext = new AudioContext();
+	const source = audioContext.createMediaElementSource(lainonRadio);
 	source.connect(audioContext.destination);
 
-	var analyzer = Meyda.createMeydaAnalyzer({
-		audioContext: audioContext,
-		source: source,
-		bufferSize: 512,
-		featureExtractors: ['rms'],
-		callback: (features) => {
-			var musicLog = document.getElementById('musicLog');
-			document.getElementById('gitname').style.textShadow = '0 0 ' + 3 + features.rms * 100 + 'px #c3c3c3';
+	// Create and configure an Analyser Node
+	const analyser = audioContext.createAnalyser();
+	analyser.fftSize = 256;
+	const dataArray = new Uint8Array(analyser.frequencyBinCount);
+	source.connect(analyser);
 
-			if (features.rms == 0) {
-				//¿Silent?
-				musicLog.textContent = 'CONNECTION ERROR: Buffering...';
-				musicLog.style.display = 'block';
-			} else {
-				musicLog.style.display = 'none';
-			}
-		},
-	});
-	analyzer.start();
-	// End meyda.min.js //
-
+	// Start the radio
 	lainonRadio.play();
+
+	// Update UI
 	document.getElementById('volume').className = 'volume active';
 	document.getElementById('volume').textContent = 'Volume > ' + lainonRadio.volume * 10 + ' // scroll to change ';
-	console.log('Playing radio streaming from lainon.life, Buffering...');
+
+	console.log('Playing audio...');
+
+	// Nested function to perform drawing loop
+	const drawLoop = () => {
+		analyser.getByteFrequencyData(dataArray);
+
+		// Calculate RMS
+		const sum = dataArray.reduce((acc, val) => acc + val * val, 0);
+		const rms = Math.sqrt(sum / dataArray.length);
+		const normalizedRMS = (rms / 255) * 100;
+
+		// Use the RMS for text shadow
+		document.getElementById('gitname').style.textShadow = `0px 0px ${normalizedRMS}px rgba(156, 159, 164,1)`;
+
+		// Continue the loop
+		requestAnimationFrame(drawLoop);
+	};
+	drawLoop();
 }
 
 window.addEventListener('wheel', (event) => {
