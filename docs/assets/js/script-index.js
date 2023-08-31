@@ -1,5 +1,5 @@
 console.log('%cHi there 👋', 'color: #36393e; font-size: 30px;');
-console.log("Do you want some music on? Type 'music()'");
+console.log("Do you want some music on? Type 'music' on the air");
 document.getElementById('jsEnabled').style.display = 'none';
 
 var lainonRadio = document.getElementById('audio');
