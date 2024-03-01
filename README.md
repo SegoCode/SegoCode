@@ -1,7 +1,7 @@
 <img align="right" width="140" height="123" alt="octocat" src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/media/mona-loading-edited-apng.png">
 
 Coding **6** years for fun in github and web backend dev employed.<br/>
-Making tiny and simple things which have **594** stars across **17** repositories.<br/>
+Making tiny and simple things which have **607** stars across **17** repositories.<br/>
 Also, highly obsession with privacy.<br/>
 
 
@@ -11,11 +11,11 @@ Also, highly obsession with privacy.<br/>
 <a href="https://www.buymeacoffee.com/segocode" download><img align="right" src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 ----
 
-![Batchfile](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23C1F12E&message=Batchfile%EF%B8%B149.3%25)
-![JavaScript](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23f1e05a&message=JavaScript%EF%B8%B125.3%25)
-![AutoIt](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%231C3552&message=AutoIt%EF%B8%B16%25)
-![Java](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23b07219&message=Java%EF%B8%B15.8%25)
-![Go](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%2300ADD8&message=Go%EF%B8%B15.7%25)
-![HTML](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23e34c26&message=HTML%EF%B8%B12.5%25)
-![PowerShell](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23012456&message=PowerShell%EF%B8%B12.5%25)
-![Other](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23ededed&message=Other%EF%B8%B12.5%25)
+![Batchfile](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23C1F12E&message=Batchfile%EF%B8%B144.9%25)
+![JavaScript](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23f1e05a&message=JavaScript%EF%B8%B127.5%25)
+![AutoIt](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%231C3552&message=AutoIt%EF%B8%B16.5%25)
+![Java](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23b07219&message=Java%EF%B8%B16.3%25)
+![Go](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%2300ADD8&message=Go%EF%B8%B16.2%25)
+![HTML](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23e34c26&message=HTML%EF%B8%B12.7%25)
+![PowerShell](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23012456&message=PowerShell%EF%B8%B12.7%25)
+![Other](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23ededed&message=Other%EF%B8%B12.7%25)
