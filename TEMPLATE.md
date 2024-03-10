@@ -8,7 +8,6 @@ Also, highly obsession with privacy.<br/>
 - Email: [secure and encrypted powered by Tutanota](https://segocode.github.io/SegoCode/)
 - Discussions: [another way to keep in touch with me](https://github.com/SegoCode/SegoCode/discussions/categories/keep-in-touch)
 - GPG key: [`179A0H3F98514DE4`](https://segocode.github.io/SegoCode/)
-<a href="https://www.buymeacoffee.com/segocode" download><img align="right" src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 ----
 
 {{ LANGUAGE_TEMPLATE_START }}
