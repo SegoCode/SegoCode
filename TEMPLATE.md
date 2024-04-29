@@ -14,4 +14,4 @@ Also, highly obsession with privacy.<br/>
 {{ LANGUAGE_TEMPLATE_END }}
 
 
-<p align="center"> ⬇️ EXPLORE MY ACTIVE PROJECTS BELOW ⬇️ </p>
+<p align="center"> ⬇️ EXPLORE MY POPULAR PROJECTS BELOW ⬇️ </p>
