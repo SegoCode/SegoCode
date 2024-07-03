@@ -1,14 +1,7 @@
 @import url('https://fonts.cdnfonts.com/css/jetbrains-mono-2');
-@font-face {
-	/* font-family: 'Retron2000'; */
-	font-family: 'JetBrains Mono'
-	font-style: normal;
-	font-weight: 400;
-	/* src: local('Retron2000'), url('https://fonts.cdnfonts.com/s/18145/Retron2000.woff') format('woff'); */
-}
 
 * {
-	font-family: 'Retron2000', sans-serif;
+	font-family: 'JetBrains Mono', monospace !important;
 }
 
 body {
