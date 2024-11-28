@@ -7,7 +7,7 @@ Also, highly obsession with privacy.<br/>
 
 - Email: [secure and encrypted powered by Tutanota](https://segocode.github.io/SegoCode/)
 - Discussions: [another way to keep in touch with me](https://github.com/SegoCode/SegoCode/discussions/categories/keep-in-touch)
-- Check out my dev notes: [mis notas de programador, en español](https://segocode.github.io/notes/)
+- My dev notes: [mis notas de programador, en español](https://segocode.github.io/notes/)
 ----
 
 {{ LANGUAGE_TEMPLATE_START }}
