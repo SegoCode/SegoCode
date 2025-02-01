@@ -1,7 +1,7 @@
 <img align="right" width="140" height="123" alt="octocat" src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/media/mona-loading-edited-apng.png">
 
-Coding **6** years for fun in github and web backend dev employed.<br/>
-Making tiny and simple things which have **702** stars across **21** repositories.<br/>
+Coding **7** years for fun in github and web backend dev employed.<br/>
+Making tiny and simple things which have **717** stars across **21** repositories.<br/>
 Also, highly obsession with privacy.<br/>
 
 
