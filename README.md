@@ -1,7 +1,7 @@
 <img align="right" width="140" height="123" alt="octocat" src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/media/mona-loading-edited-apng.png">
 
 Coding **7** years for fun in github and web backend dev employed.<br/>
-Making tiny and simple things which have **744** stars across **21** repositories.<br/>
+Making tiny and simple things which have **750** stars across **21** repositories.<br/>
 Also, highly obsession with privacy.<br/>
 
 
@@ -18,6 +18,8 @@ Also, highly obsession with privacy.<br/>
 ![Go](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%2300ADD8&message=Go%EF%B8%B15.2%25)
 ![TypeScript](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%233178c6&message=TypeScript%EF%B8%B12.8%25)
 ![Other](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23ededed&message=Other%EF%B8%B17.2%25)
+
+<p align="center"> ⬇️ CHECK WHAT I AM WORKING ON BELOW ⬇️ </p>
 
 
 <p align="center"> ⬇️ EXPLORE MY POPULAR PROJECTS BELOW ⬇️ </p>
