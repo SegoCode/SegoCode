@@ -8,6 +8,7 @@ Also, highly obsession with privacy.<br/>
 - Email: [secure and encrypted powered by Tutanota](https://segocode.github.io/SegoCode/)
 - Discussions: [another way to keep in touch with me](https://github.com/SegoCode/SegoCode/discussions/categories/keep-in-touch)
 - My dev notes: [mis notas de programador, en español](https://segocode.github.io/notes/)
+- GitHub Octo Ring: *[Previous](https://octo-ring.com/p/SegoCode/prev) / [Random](https://octo-ring.com/p/SegoCode/random) / [Next](https://octo-ring.com/p/SegoCode/next)*
 ----
 
 {{ LANGUAGE_TEMPLATE_START }}
