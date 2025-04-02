@@ -1,0 +1,64 @@
+name: Do not merge
+
+on:
+  pull_request:
+    types: [opened, edited, labeled, unlabeled, synchronize, ready_for_review]
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check if PR is ready to be merged
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const forbiddenWords = ['wip', '[wip]', 'work in progress', 'in progress', 'do not merge', 'do-not-merge', 'do_not_merge', 'dont merge', 'draft', '🚧', 'needs work'];
+            const pr = context.payload.pull_request;
+            const prTitle = pr.title.toLowerCase();
+            const labels = pr.labels.map(label => label.name.toLowerCase());
+            const isDraft = pr.draft;
+            const hasForbiddenLabel = labels.some(label => forbiddenWords.some(word => label.includes(word)));
+            const hasForbiddenTitle = forbiddenWords.some(word => prTitle.includes(word));
+            if (isDraft || hasForbiddenLabel || hasForbiddenTitle) {
+              core.setFailed('The Pull Request is in draft mode or has labels or title indicating it should not be merged.');
+            } else {
+              console.log('The Pull Request is ready to be merged.');
+            }
+      
+      - name: Check if PR is from develop to main
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = context.payload.pull_request;
+            const baseBranch = pr.base.ref;
+            const headBranch = pr.head.ref;
+            
+            if (headBranch === 'develop' && baseBranch === 'main') {
+              const repoFullName = context.payload.repository.full_name;
+              const syncWorkflowLink = `https://github.com/${repoFullName}/actions/workflows/sync-from-develop-to-main.yml`;
+              
+              const message = `
+              ## ⚠️ Direct PR from develop to main detected
+              
+              This pull request is merging changes directly from \`develop\` to \`main\`.
+              
+              ### Important Note
+              Please consider using our [sync workflow](${syncWorkflowLink}) instead of this direct PR.
+              
+              **If you don't use the sync workflow:**
+              - This PR will not trigger a release
+              - You'll need to manually handle release processes
+              `;
+              
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                body: message
+              });
+              
+              console.log('Added comment to PR from develop to main');
+            } else {
+              console.log('PR is not from develop to main, no action needed');
+            }
