@@ -19,7 +19,5 @@ Also, highly obsession with privacy.<br/>
 ![TypeScript](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%233178c6&message=TypeScript%EF%B8%B12.8%25)
 ![Other](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23ededed&message=Other%EF%B8%B17.2%25)
 
-<p align="center"> ⬇️ CHECK WHAT I AM WORKING ON BELOW ⬇️ </p>
-
 
 <p align="center"> ⬇️ EXPLORE MY POPULAR PROJECTS BELOW ⬇️ </p>
