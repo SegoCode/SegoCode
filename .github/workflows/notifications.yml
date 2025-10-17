@@ -10,11 +10,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up GitHub CLI
-        uses: cli/setup-action@v1
-        with:
-          version: latest
-
       - name: Fetch and display notifications
         env:
           GH_TOKEN: ${{ secrets.USER_TOKEN }}
