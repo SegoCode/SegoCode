@@ -1,0 +1,46 @@
+name: Mark Notifications as Read
+
+on:
+  workflow_dispatch:  
+
+jobs:
+  mark-notifications-read:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up GitHub CLI
+        uses: cli/setup-action@v1
+        with:
+          version: latest
+
+      - name: Fetch and display notifications
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "📋 Current notifications:"
+          gh api --paginate notifications --jq '.[] | {id: .id, subject: .subject.title, repository: .repository.full_name}' || echo "No notifications found"
+
+      - name: Mark all notifications as read
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🔄 Marking notifications as read..."
+          notification_ids=$(gh api --paginate notifications --jq '.[].id' 2>/dev/null)
+          
+          if [ -z "$notification_ids" ]; then
+            echo "✅ No notifications to mark as read"
+            exit 0
+          fi
+          
+          marked_count=0
+          while IFS= read -r notification_id; do
+            if [ -n "$notification_id" ]; then
+              echo "Marking notification $notification_id as read..."
+              gh api -X PATCH "notifications/threads/$notification_id"
+              marked_count=$((marked_count + 1))
+            fi
+          done <<< "$notification_ids"
+          
+          echo "✅ Successfully marked $marked_count notification(s) as read"
