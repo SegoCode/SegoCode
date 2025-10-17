@@ -1,3 +1,4 @@
+# This action clears spam notifications created by bots by marking every unread one as read.
 on:
   workflow_dispatch:  
 
