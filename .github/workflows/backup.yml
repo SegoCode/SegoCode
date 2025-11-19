@@ -1,0 +1,63 @@
+name: Backup to Codeberg
+
+on:
+  workflow_dispatch:
+
+jobs:
+  mark-notifications-read:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Mirror all GitHub repos to Codeberg
+        env:
+          GH_TOKEN: ${{ secrets.USER_TOKEN }}          # PAT de GitHub con scope repo
+          CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}# Token API de Codeberg
+          CODEBERG_USER: ${{ secrets.CODEBERG_USER }}  # Tu usuario en Codeberg
+          GH_USER: ${{ github.repository_owner }}      # Owner en GitHub
+        run: |
+          set -euo pipefail
+
+          echo "Listando repositorios de GitHub vía gh..."
+          # Lista todos los repos del usuario autenticado en formato JSON
+          gh repo list --limit 1000 --json name > repos.json
+
+          # Iterar sobre cada repo
+          while read -r repo; do
+            REPO_NAME=$(echo "$repo" | jq -r '.name')
+
+            echo "--------------------------------------------"
+            echo "Procesando repositorio: $REPO_NAME"
+
+            # 1. Crear repo en Codeberg, siempre privado
+            HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" \
+              -X POST "https://codeberg.org/api/v1/user/repos" \
+              -H "Content-Type: application/json" \
+              -H "Authorization: token $CODEBERG_TOKEN" \
+              -d "{
+                \"name\": \"$REPO_NAME\",
+                \"private\": true
+              }")
+
+            if [ "$HTTP_CODE" -eq 201 ]; then
+              echo "Repositorio '$REPO_NAME' creado en Codeberg como privado."
+            elif [ "$HTTP_CODE" -eq 409 ]; then
+              echo "Repositorio '$REPO_NAME' ya existe en Codeberg, se continuará con el mirror."
+            else
+              echo "Error creando '$REPO_NAME' en Codeberg (HTTP $HTTP_CODE). Se pasa al siguiente."
+              continue
+            fi
+
+            # 2. Clonar en modo mirror desde GitHub
+            git clone --mirror "https://$GH_USER:$GH_TOKEN@github.com/$GH_USER/$REPO_NAME.git" "$REPO_NAME.git"
+
+            cd "$REPO_NAME.git"
+
+            # 3. Hacer push mirror a Codeberg
+            git push --mirror "https://$CODEBERG_USER:$CODEBERG_TOKEN@codeberg.org/$CODEBERG_USER/$REPO_NAME.git" || echo "Error en git push para $REPO_NAME"
+
+            cd ..
+            rm -rf "$REPO_NAME.git"
+
+          done < <(jq -c '.[]' repos.json)
