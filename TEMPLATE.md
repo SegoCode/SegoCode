@@ -1,7 +1,7 @@
 > [!WARNING]  
 > I'll be away and won't be updating my repositories with new code for some time. I'll continue to reply to messages and check pull requests
 
-<img align="right" width="140" height="123" alt="octocat" src="https://raw.githubusercontent.com/SegoCode/SegoCode/main/media/mona-loading-edited-apng.png">
+<img align="right" width="140" height="123" alt="octocat" src="https://github.com/SegoCode/SegoCode/blob/main/media/mona-loading-edited-apng.png">
 
 Coding **{{ ACCOUNT_AGE }}** years for fun in github and web backend dev employed.<br/>
 Making tiny and simple things which have **{{ STARS }}** stars across **{{ REPOSITORIES }}** repositories.<br/>
