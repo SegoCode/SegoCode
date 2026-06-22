@@ -18,12 +18,11 @@ jobs:
         token: ${{ secrets.USER_TOKEN }}
     - name: Update README.md
       run: |
-        if [[ "$(git status --porcelain)" != "" ]]; then
-        git config user.name github-actions[bot]
-        git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
         git add .
-        git commit -m "Update README"
+        git diff --staged --quiet || git commit -m "Update README $(date -u +'%Y-%m-%d %H:%M UTC')"
+        git pull --rebase
         git push
-        fi
   
     
