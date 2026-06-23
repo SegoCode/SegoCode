@@ -1,5 +1,3 @@
-name: Encrypted backup
-
 on:
   workflow_dispatch:
   schedule:
