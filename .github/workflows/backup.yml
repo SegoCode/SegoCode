@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Clone, pack and encrypt all repositories
         env:
-          GH_TOKEN: ${{ secrets.USER_TOKEN }}
+          GH_TOKEN: ${{ secrets.BACKUP_TOKEN }}
           BACKUP_KEY: ${{ secrets.BACKUP_KEY }}
         run: |
           set -euo pipefail
