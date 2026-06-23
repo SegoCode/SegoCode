@@ -1,0 +1,48 @@
+name: Encrypted backup
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 3 * * 0'
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone, pack and encrypt all repositories
+        env:
+          GH_TOKEN: ${{ secrets.USER_TOKEN }}
+          BACKUP_KEY: ${{ secrets.BACKUP_KEY }}
+        run: |
+          set -euo pipefail
+          OWNER="${{ github.repository_owner }}"
+          WORKDIR="$(mktemp -d)"
+
+          gh repo list "$OWNER" --limit 1000 \
+            --json name --jq '.[].name' > "$WORKDIR/repos.txt" 2>/dev/null
+
+          while IFS= read -r NAME; do
+            git clone --mirror --quiet \
+                "https://x-access-token:${GH_TOKEN}@github.com/${OWNER}/${NAME}.git" \
+                "$WORKDIR/${NAME}.git" 2>/dev/null || true
+          done < "$WORKDIR/repos.txt"
+
+          cd "$WORKDIR"
+          zip -r -q -X backup.zip ./*.git
+
+          openssl enc -aes-256-cbc -pbkdf2 -salt \
+              -pass env:BACKUP_KEY \
+              -in backup.zip -out backup.zip.enc
+
+          rm -f backup.zip
+          rm -rf ./*.git
+
+          echo "ARTIFACT=$WORKDIR/backup.zip.enc" >> "$GITHUB_ENV"
+
+      - name: Upload encrypted backup
+        uses: actions/upload-artifact@v4
+        with:
+          name: backup-${{ github.run_id }}
+          path: ${{ env.ARTIFACT }}
+          retention-days: 90
+          if-no-files-found: error
