@@ -1,7 +1,7 @@
 <img align="right" width="140" height="123" alt="octocat" src="https://github.com/SegoCode/SegoCode/blob/main/media/mona-loading-edited-apng.png">
 
 Coding **8** years for fun in github and web backend dev employed.<br/>
-Making tiny and simple things which have **876** stars across **24** repositories.<br/>
+Making tiny and simple things which have **878** stars across **24** repositories.<br/>
 Also, highly obsession with privacy.<br/>
 
 
@@ -11,13 +11,13 @@ Also, highly obsession with privacy.<br/>
 - GitHub Octo Ring: *[Previous](https://octo-ring.com/p/SegoCode/prev) / [Random](https://octo-ring.com/p/SegoCode/random) / [Next](https://octo-ring.com/p/SegoCode/next)*
 ----
 
-![MDX](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23fcb32c&message=MDX%EF%B8%B126.2%25)
-![Batchfile](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23C1F12E&message=Batchfile%EF%B8%B124.7%25)
-![JavaScript](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23f1e05a&message=JavaScript%EF%B8%B118.5%25)
-![Java](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23b07219&message=Java%EF%B8%B17.7%25)
-![AutoIt](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%231C3552&message=AutoIt%EF%B8%B15.3%25)
-![HTML](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23e34c26&message=HTML%EF%B8%B15%25)
+![MDX](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23fcb32c&message=MDX%EF%B8%B125.7%25)
+![Batchfile](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23C1F12E&message=Batchfile%EF%B8%B124.2%25)
+![JavaScript](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23f1e05a&message=JavaScript%EF%B8%B118.2%25)
+![Java](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23b07219&message=Java%EF%B8%B17.5%25)
+![HTML](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23e34c26&message=HTML%EF%B8%B16.6%25)
+![AutoIt](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%231C3552&message=AutoIt%EF%B8%B15.2%25)
 ![Go](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%2300ADD8&message=Go%EF%B8%B14.8%25)
-![Other](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23ededed&message=Other%EF%B8%B17.5%25)
+![Other](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23ededed&message=Other%EF%B8%B17.3%25)
 
 <p align="center"> ⬇️ EXPLORE MY POPULAR PROJECTS BELOW ⬇️ </p>
