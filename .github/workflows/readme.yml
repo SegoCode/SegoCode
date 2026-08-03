@@ -1,3 +1,5 @@
+name: Update profile README
+
 on:
   schedule:
     - cron: '0 0 1 * *'
@@ -5,24 +7,31 @@ on:
     branches:
       - main
   workflow_dispatch:
+
+concurrency:
+  group: update-profile-readme
+
 jobs:
   update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-    - uses: actions/checkout@v7
-      with:
-        fetch-depth: 0
-    - name: Profile Readme Stats
-      uses: teoxoy/profile-readme-stats@v3
-      with:
-        token: ${{ secrets.USER_TOKEN }}
-    - name: Update README.md
-      run: |
-        git config --global user.name "github-actions"
-        git config --global user.email "github-actions@github.com"
-        git add .
-        git diff --staged --quiet || git commit -m "Update README $(date -u +'%Y-%m-%d %H:%M UTC')"
-        git pull --rebase
-        git push
-  
-    
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Profile Readme Stats
+        uses: teoxoy/profile-readme-stats@v3
+        with:
+          token: ${{ secrets.USER_TOKEN }}
+      - name: Commit and push README
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --staged --quiet; then
+            exit 0
+          fi
+          git commit -m "docs: update profile README"
+          git push origin HEAD:main
