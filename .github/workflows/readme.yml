@@ -1,5 +1,3 @@
-name: Update profile README
-
 on:
   schedule:
     - cron: '0 0 1 * *'
