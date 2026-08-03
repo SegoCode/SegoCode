@@ -26,7 +26,11 @@ document.getElementById('hiddenData').addEventListener('click', (event) => {
 function protectedFunc(key) {
 	// Scraping protection
 	var CryptoJS = window.CryptoJS;
-	var bytes = CryptoJS.AES.decrypt('U2FsdGVkX18TpCCHkp0puKKrUoTs+HFOeaze9mRenZ5r/JMtzYPoI7XGxdPH+DQc', atob(key));
+	var encryptedParts = [
+		'U2FsdGVkX191hDMa09+aLUdmhtI9U1NMsVMQl1wKD5ftOdFngWI5v',
+		'hDzkCHEUKgLWz8kH1qB6YaCerEf5ci7Dw==',
+	];
+	var bytes = CryptoJS.AES.decrypt(encryptedParts.join(''), atob(key));
 	return bytes.toString(CryptoJS.enc.Utf8);
 }
 
