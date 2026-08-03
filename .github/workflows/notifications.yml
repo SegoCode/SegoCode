@@ -1,14 +1,12 @@
-# This action clears spam notifications created by bots by marking every unread one as read.
+name: Mark notifications as read
+
 on:
-  workflow_dispatch:  
+  workflow_dispatch:
 
 jobs:
   mark-notifications-read:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
       - name: Fetch and display notifications
         env:
           GH_TOKEN: ${{ secrets.USER_TOKEN }}
