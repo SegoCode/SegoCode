@@ -5,7 +5,7 @@ Making tiny and simple things which have **885** stars across **24** repositorie
 Also, highly obsession with privacy.<br/>
 
 
-- Email: [Secure and encrypted](https://segocode.github.io/SegoCode/) with [GPG keys](https://segocode.github.io/SegoCode/)
+- Email: [secure and encrypted](https://segocode.github.io/SegoCode/)
 - Discussions: [another way to keep in touch with me](https://github.com/SegoCode/SegoCode/discussions/categories/keep-in-touch)
 - Buy me a coffee: [feeling grateful? You can buy me a coffee](https://github.com/SegoCode/SegoCode/discussions/2)
 - GitHub Octo Ring: *[Previous](https://octo-ring.com/p/SegoCode/prev) / [Random](https://octo-ring.com/p/SegoCode/random) / [Next](https://octo-ring.com/p/SegoCode/next)*
