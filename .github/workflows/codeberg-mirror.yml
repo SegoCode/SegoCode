@@ -1,0 +1,153 @@
+name: Mirror GitHub to Codeberg
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'
+  workflow_dispatch:
+
+concurrency:
+  group: codeberg-mirror
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GITHUB_OWNER: SegoCode
+      CODEBERG_OWNER: SegoCode
+      CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
+      CODEBERG_API: https://codeberg.org/api/v1
+      GIT_TERMINAL_PROMPT: 0
+    steps:
+      - name: Mirror public repositories
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          codeberg_api() {
+            curl --fail-with-body --silent --show-error \
+              --connect-timeout 20 --max-time 120 \
+              --header "Authorization: token $CODEBERG_TOKEN" \
+              --header 'Content-Type: application/json' \
+              "$@"
+          }
+
+          delete_codeberg_repo() {
+            local name="$1" status
+
+            if ! status="$(curl --silent --show-error \
+              --connect-timeout 20 --max-time 120 \
+              --output /dev/null --write-out '%{http_code}' \
+              --request DELETE \
+              --header "Authorization: token $CODEBERG_TOKEN" \
+              "$CODEBERG_API/repos/$CODEBERG_OWNER/$name")"; then
+              echo "Failed to delete Codeberg repository: $name" >&2
+              return 1
+            fi
+
+            if [[ "$status" != 204 && "$status" != 404 ]]; then
+              echo "Unexpected HTTP $status deleting Codeberg repository: $name" >&2
+              return 1
+            fi
+          }
+
+          if [[ -z "$CODEBERG_TOKEN" ]]; then
+            echo 'The CODEBERG_TOKEN secret is not configured.' >&2
+            exit 1
+          fi
+
+          codeberg_login="$(codeberg_api "$CODEBERG_API/user" | jq -r '.login')"
+          if [[ "${codeberg_login,,}" != "${CODEBERG_OWNER,,}" ]]; then
+            echo "CODEBERG_TOKEN belongs to '$codeberg_login', not '$CODEBERG_OWNER'." >&2
+            exit 1
+          fi
+
+          workdir="$(mktemp -d)"
+          trap 'rm -rf "$workdir"' EXIT
+
+          gh api --paginate \
+            "users/$GITHUB_OWNER/repos?type=owner&per_page=100" \
+            --jq '.[] | select(.private == false) | [.name, .default_branch] | @tsv' \
+            | sort -u > "$workdir/github-repos.tsv"
+          cut -f1 "$workdir/github-repos.tsv" > "$workdir/github-repos.txt"
+
+          if [[ ! -s "$workdir/github-repos.txt" ]]; then
+            echo 'GitHub returned no public repositories; refusing to delete backups.' >&2
+            exit 1
+          fi
+
+          # Finish every GitHub clone before making any destructive Codeberg change.
+          while IFS= read -r name; do
+            echo "Cloning $GITHUB_OWNER/$name"
+            git clone --bare --quiet \
+              "https://github.com/$GITHUB_OWNER/$name.git" \
+              "$workdir/$name.git"
+          done < "$workdir/github-repos.txt"
+
+          while IFS=$'\t' read -r name default_branch; do
+            repo="$workdir/$name.git"
+            echo "Recreating $CODEBERG_OWNER/$name"
+
+            delete_codeberg_repo "$name"
+            codeberg_api \
+              --request POST \
+              --data "$(jq -cn \
+                --arg name "$name" \
+                --arg default_branch "$default_branch" \
+                '{name: $name, default_branch: $default_branch, private: false, auto_init: false}')" \
+              "$CODEBERG_API/user/repos" > /dev/null
+
+            git -C "$repo" remote add codeberg \
+              "https://codeberg.org/$CODEBERG_OWNER/$name.git"
+
+            refspecs=()
+            if [[ -n "$(git -C "$repo" for-each-ref --format='%(refname)' refs/heads)" ]]; then
+              refspecs+=('+refs/heads/*:refs/heads/*')
+            fi
+            if [[ -n "$(git -C "$repo" for-each-ref --format='%(refname)' refs/tags)" ]]; then
+              refspecs+=('+refs/tags/*:refs/tags/*')
+            fi
+
+            if (( ${#refspecs[@]} > 0 )); then
+              # The token expands when Git invokes the helper, not in this shell.
+              # shellcheck disable=SC2016
+              git -C "$repo" \
+                -c credential.username="$CODEBERG_OWNER" \
+                -c credential.helper='!f() { echo "password=$CODEBERG_TOKEN"; }; f' \
+                push --quiet codeberg "${refspecs[@]}"
+            fi
+          done < "$workdir/github-repos.tsv"
+
+          : > "$workdir/codeberg-repos.txt"
+          page=1
+          while true; do
+            response="$(codeberg_api \
+              "$CODEBERG_API/user/repos?limit=50&page=$page")"
+            count="$(jq 'length' <<< "$response")"
+            if (( count == 0 )); then
+              break
+            fi
+
+            jq -r --arg owner "$CODEBERG_OWNER" \
+              '.[] | select((.owner.login | ascii_downcase) == ($owner | ascii_downcase)) | .name' \
+              <<< "$response" >> "$workdir/codeberg-repos.txt"
+            page=$((page + 1))
+          done
+          sort -u -o "$workdir/codeberg-repos.txt" "$workdir/codeberg-repos.txt"
+
+          comm -23 \
+            "$workdir/codeberg-repos.txt" \
+            "$workdir/github-repos.txt" > "$workdir/stale-repos.txt"
+
+          while IFS= read -r name; do
+            [[ -z "$name" ]] && continue
+            echo "Deleting stale Codeberg repository: $name"
+            delete_codeberg_repo "$name"
+          done < "$workdir/stale-repos.txt"
+
+          echo "Mirrored $(wc -l < "$workdir/github-repos.txt") public repositories."
