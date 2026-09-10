@@ -17,4 +17,4 @@ Also, highly obsession with privacy.<br/>
 
 <p align="center"> ⬇️ EXPLORE MY POPULAR PROJECTS BELOW ⬇️ </p>
 
-![stars](https://starcards.segocode.workers.dev/?width=995&height=300)
+![stars](https://starcards.segocode.workers.dev/?width=995&height=150)
