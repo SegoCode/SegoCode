@@ -21,5 +21,3 @@ Also, highly obsession with privacy.<br/>
 ![Other](https://img.shields.io/static/v1?style=flat-square&label=%E2%A0%80&color=36393e&labelColor=%23ededed&message=Other%EF%B8%B17.8%25)
 
 <p align="center"> ⬇️ EXPLORE MY POPULAR PROJECTS BELOW ⬇️ </p>
-
-![stars](https://starcards.segocode.workers.dev/?width=995&height=148)
